@@ -1,0 +1,64 @@
+<!-- include header -->
+<%-include('include/_header.ejs')%>
+<!-- /include header -->
+
+  <!-- mane add-user section -->
+  <container class="addcontainer">
+    <div class="addcontainerdiv">
+     <div class="box-nav d-flex-justify-between">
+       <a href="/" class="border-shadow">
+         <span class=""><i class="fas fa-angle-double-left"></i> All User </span>
+       </a>
+    </div>
+    <div class="TitleTop">
+        <h1>Update User</h1>
+    </div>
+
+
+<!-- form Hendling -->
+<form method="POST" id="update-user">
+  <div class="new_user">
+    <div class="input-group mb-3">
+      <span for="name">Name</span>
+      <input type="hidden" name="id" value="<%=user._id%>">
+      <input type="text" name="name" class="form-control" placeholder="Username" value="<%=user.name%>">
+    </div>
+    <div class="input-group mb-3">
+      <span for="email">Email</span>
+      <input type="text" name="email" class="form-control" placeholder="Email id" value="<%=user.email%>">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gander:</label>
+      <input  type="radio" name="gender" id="radio-1"  value="Mail"<%= user.gender=='Mail'?'checked':''%>>
+      <label  for="radio-1">Mail</label>
+      
+      <input  type="radio" name="gender" id="radio-2" value="Female"<%= user.gender=='Female'?'checked':''%>>
+      <label  for="radio-2">Female</label>
+    </div>
+<br>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <input class="form-check-input" type="radio" name="status" id="radio-3"  value="Active"<%= user.status=='Active'?'checked':''%>>
+      <label class="form-check-label"  for="radio-3">Active</label>
+
+      <input class="form-check-input" type="radio" name="status" id="radio-4" value="Inactive"<%= user.status=='Inactive'?'checked':''%>>
+      <label class="form-check-label" for="radio-4">Inactive</label>
+    </div>
+
+
+    <!-- /form Handling -->
+   <div class="btn from-group">
+  <button value="Submit" type="submit">Save</button>
+  </div>
+  <!-- /form Handling -->
+  </div>
+</form>
+<!-- /form Hendling -->
+
+   </container>
+   <!-- /mane add-user section -->
+
+<!-- include footer -->
+<%-include('include/_footer.ejs')%>
+<!-- /include footer -->
